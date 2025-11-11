@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase/config";
 import {
@@ -83,11 +84,12 @@ export function AuthProvider({ children }) {
     register,
     loginWithGoogle,
     logout,
+    loading, 
   };
 
   return (
     <AuthContext.Provider value={value}>
-      {!loading && children}
+      {children} 
     </AuthContext.Provider>
   );
 }

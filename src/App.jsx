@@ -1,4 +1,6 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -8,20 +10,22 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
