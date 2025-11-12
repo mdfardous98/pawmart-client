@@ -5,7 +5,7 @@ import LoadingSpinner from "../Components/LoadingSpinner";
 import Container from "../Components/Container";
 import { Typewriter } from "react-simple-typewriter";
 import { jsPDF } from "jspdf";
-import "jspdf-autotable";
+import { autoTable } from "jspdf-autotable";
 import { FaFilePdf } from "react-icons/fa";
 import toast from "react-hot-toast";
 
@@ -67,7 +67,7 @@ const MyOrders = () => {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 py-12">
       <title>My Orders</title>
       <Container>
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full py-4 px-8 shadow-lg">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full py-4 px-8 shadow-lg hover:scale-105 transition-transform duration-500 cursor-pointer">
           <FaFilePdf className="text-3xl animate-bounce" />
           <Typewriter words={["My Orders Dashboard"]} />
         </h2>

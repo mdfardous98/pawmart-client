@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import Container from "../Components/Container";
-import ListingCard from "../Components/Shared/ListingCard";
+import ListingCard from "../Components/Shared/LstingCard";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { Typewriter } from "react-simple-typewriter";
 
