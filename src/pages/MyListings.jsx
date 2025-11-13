@@ -18,7 +18,9 @@ const MyListings = () => {
     if (!currentUser?.email) return;
 
     axios
-      .get()
+      .get(
+        `https://pawmart-server-olive.vercel.app/listings/user/${currentUser?.email}`
+      )
       .then((res) => setListingsData(res.data))
       .catch(() => toast.error("Failed to fetch listings"))
       .finally(() => setLoading(false));
@@ -37,19 +39,19 @@ const MyListings = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios
-          .delete()
-          .then(() => {
-            setListingsData(listingsData.filter((item) => item._id !== id));
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your listing has been deleted.",
-              icon: "success",
-              timer: 2000,
-              showConfirmButton: false,
-            });
-          })
-          .catch(() => toast.error("Failed to delete listing"));
+       axios
+         .delete(`https://pawmart-server-olive.vercel.app/listings/${id}`)
+         .then(() => {
+           setListingsData(listingsData.filter((item) => item._id !== id));
+           Swal.fire({
+             title: "Deleted!",
+             text: "Your listing has been deleted.",
+             icon: "success",
+             timer: 2000,
+             showConfirmButton: false,
+           });
+         })
+         .catch(() => toast.error("Failed to delete listing"));
       }
     });
   };

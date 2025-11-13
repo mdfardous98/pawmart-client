@@ -25,13 +25,15 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
-        loader: () => axios(),
+        loader: () =>
+          axios.get("https://pawmart-server-olive.vercel.app/recent-listings"),
         hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
       },
       {
-        path: "/pets-supplies",
+        path: "/pets-supply",
         element: <PetsSupply></PetsSupply>,
-        loader: () => axios(),
+        loader: () =>
+          axios.get("https://pawmart-server-olive.vercel.app/listings"),
         hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
       },
       {
@@ -90,6 +92,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: (
           <GuestRouter>
+            {" "}
             <Register></Register>
           </GuestRouter>
         ),

@@ -29,7 +29,7 @@ const AddListing = () => {
     };
 
     axios
-      .post(newListing)
+      .post("https://pawmart-server-olive.vercel.app/listings", newListing)
       .then((res) => {
         toast.success("Listing added successfully!");
         form.reset();

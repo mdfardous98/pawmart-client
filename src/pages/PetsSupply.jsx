@@ -30,7 +30,10 @@ const PetsSupply = () => {
     if (!searchText) return setLoading(false);
 
     try {
-      const response = await axios.get();
+      const response = await axios.get(
+        `https://pawmart-server-olive.vercel.app/search?search=${searchText}`
+      );
+
       setSearchData(response.data);
     } catch (error) {
       toast.error("Failed to fetch search results");

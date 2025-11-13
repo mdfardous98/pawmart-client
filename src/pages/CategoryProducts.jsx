@@ -14,7 +14,10 @@ const CategoryProducts = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get()
+      .get(
+        `https://pawmart-server-olive.vercel.app/listings/category/${categoryName}`
+      )
+
       .then((res) => {
         setData(res.data);
         setLoading(false);

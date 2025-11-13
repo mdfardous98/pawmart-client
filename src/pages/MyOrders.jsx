@@ -18,7 +18,9 @@ const MyOrders = () => {
     if (!currentUser?.email) return;
 
     axios
-      .get()
+      .get(
+        `https://pawmart-server-olive.vercel.app/orders/${currentUser?.email}`
+      )
       .then((res) => setOrderData(res.data))
       .catch(() => toast.error("Failed to fetch orders"))
       .finally(() => setLoading(false));

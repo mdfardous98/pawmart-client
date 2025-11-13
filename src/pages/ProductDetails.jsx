@@ -18,7 +18,8 @@ const ProductDetails = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios()
+    axios
+      .get(`https://pawmart-server-olive.vercel.app/listings/${id}`)
       .then((res) => setPageDetails(res.data))
       .catch(() => toast.error("Failed to fetch product details"))
       .finally(() => setLoading(false));
@@ -52,7 +53,7 @@ const ProductDetails = () => {
     };
 
     axios
-      .post(orderData)
+      .post("https://pawmart-server-olive.vercel.app/orders", orderData)
       .then((res) => {
         if (res.data.insertedId) {
           toast.success("Order submitted successfully!");

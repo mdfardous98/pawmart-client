@@ -42,7 +42,10 @@ const UpdateListing = () => {
     };
 
     axios
-      .put(updateListingData)
+      .put(
+        `https://pawmart-server-olive.vercel.app/listings/${id}`,
+        updateListingData
+      )
       .then(() => toast.success("Listing updated successfully"))
       .catch(() => toast.error("Failed to update listing"));
   };
