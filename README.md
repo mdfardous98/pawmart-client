@@ -1,6 +1,6 @@
 # 🐾 PawMart – Pet Adoption & Supply Portal
 
-**Live Site:** []()
+**Live Site:** [pawmart-client-2025.netlify.app](pawmart-client-2025.netlify.app)
 
 PawMart is a community-driven pet marketplace where pet owners, breeders, and pet shops come together to adopt, sell, and buy pets or pet-related products. Whether you're looking to adopt a furry friend or shop for quality pet accessories, PawMart connects you with a trusted pet-loving community.
 
