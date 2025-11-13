@@ -11,40 +11,38 @@ import MyOrders from "../pages/MyOrders";
 import GuestRouter from "./GuestRouter";
 import PrivateRoute from "./PrivateRoute";
 import CategoryProducts from "../pages/CategoryProducts";
-import axios from "axios";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import ProductDetails from "../pages/ProductDetails";
 import UpdateListing from "../pages/UpdateListing";
+import { api } from "../api/axios"; 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        element: <Home></Home>,
-        loader: () =>
-          axios.get("https://pawmart-server-olive.vercel.app/recent-listings"),
-        hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
+        element: <Home />,
+        loader: () => api.get("/recent-listings"),
+        hydrateFallbackElement: <LoadingSpinner />,
       },
       {
         path: "/pets-supplies",
-        element: <PetsSupply></PetsSupply>,
-        loader: () =>
-          axios.get("https://pawmart-server-olive.vercel.app/listings"),
-        hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
+        element: <PetsSupply />,
+        loader: () => api.get("/listings"),
+        hydrateFallbackElement: <LoadingSpinner />,
       },
       {
         path: "/category-filtered-product/:categoryName",
-        element: <CategoryProducts></CategoryProducts>,
+        element: <CategoryProducts />,
       },
       {
         path: "/product-details/:id",
         element: (
           <PrivateRoute>
-            <ProductDetails></ProductDetails>
+            <ProductDetails />
           </PrivateRoute>
         ),
       },
@@ -52,7 +50,7 @@ const router = createBrowserRouter([
         path: "/add-listing",
         element: (
           <PrivateRoute>
-            <AddListing></AddListing>
+            <AddListing />
           </PrivateRoute>
         ),
       },
@@ -60,7 +58,7 @@ const router = createBrowserRouter([
         path: "/my-listings",
         element: (
           <PrivateRoute>
-            <MyListings></MyListings>
+            <MyListings />
           </PrivateRoute>
         ),
       },
@@ -68,7 +66,7 @@ const router = createBrowserRouter([
         path: "/update-listing/:id",
         element: (
           <PrivateRoute>
-            <UpdateListing></UpdateListing>
+            <UpdateListing />
           </PrivateRoute>
         ),
       },
@@ -76,7 +74,7 @@ const router = createBrowserRouter([
         path: "/my-orders",
         element: (
           <PrivateRoute>
-            <MyOrders></MyOrders>
+            <MyOrders />
           </PrivateRoute>
         ),
       },
@@ -86,7 +84,7 @@ const router = createBrowserRouter([
     path: "/login",
     element: (
       <GuestRouter>
-        <Login></Login>
+        <Login />
       </GuestRouter>
     ),
   },
@@ -94,7 +92,7 @@ const router = createBrowserRouter([
     path: "/register",
     element: (
       <GuestRouter>
-        <Register></Register>
+        <Register />
       </GuestRouter>
     ),
   },
