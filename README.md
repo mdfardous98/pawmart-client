@@ -1,16 +1,33 @@
-# React + Vite
+# 🐾 PawMart – Pet Adoption & Supply Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** []()
 
-Currently, two official plugins are available:
+PawMart is a community-driven pet marketplace where pet owners, breeders, and pet shops come together to adopt, sell, and buy pets or pet-related products. Whether you're looking to adopt a furry friend or shop for quality pet accessories, PawMart connects you with a trusted pet-loving community.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌟 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Pet Listings & Adoption:** Explore pets available for adoption or sale with detailed profiles, contact info, and location.
 
-## Expanding the ESLint configuration
+- **Protected Route:** Details and other important pages are secured by protected routes.
+- **User Access Control:** Registered users can manage their pet listings, view orders, and track adoption requests in one place.
+- **Authentication & Authorization:** Secure login system using Firebase for both buyers and sellers to ensure data safety and trust.
+- **Responsive Design:** Optimized for all devices — desktop, tablet, and mobile — ensuring a smooth user experience.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+- **Frontend:** React, Vite, Tailwind CSS
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** Firebase
+
+---
+
+## 🚀 Getting Started (For Developers)
+
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/mdfardous98/pawmart-client.git
+   ```
