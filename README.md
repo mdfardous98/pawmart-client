@@ -1,10 +1,6 @@
 # 🐾 PawMart – Pet Adoption & Supply Portal
 
-<<<<<<< HEAD
 **Live Site:** [https://pawmart-client-2025.netlify.app](https://pawmart-client-2025.netlify.app)
-=======
-**Live Site:** [pawmart-client-2025.netlify.app](pawmart-client-2025.netlify.app)
->>>>>>> d0577d51a2ac5d0963fbd1fa78b4a88b5586b378
 
 PawMart is a community-driven pet marketplace where pet owners, breeders, and pet shops come together to adopt, sell, and buy pets or pet-related products. Whether you're looking to adopt a furry friend or shop for quality pet accessories, PawMart connects you with a trusted pet-loving community.
 
@@ -13,7 +9,6 @@ PawMart is a community-driven pet marketplace where pet owners, breeders, and pe
 ## 🌟 Key Features
 
 - **Pet Listings & Adoption:** Explore pets available for adoption or sale with detailed profiles, contact info, and location.
-
 - **Protected Route:** Details and other important pages are secured by protected routes.
 - **User Access Control:** Registered users can manage their pet listings, view orders, and track adoption requests in one place.
 - **Authentication & Authorization:** Secure login system using Firebase for both buyers and sellers to ensure data safety and trust.
@@ -34,4 +29,3 @@ PawMart is a community-driven pet marketplace where pet owners, breeders, and pe
 1. **Clone this repository:**
    ```bash
    git clone https://github.com/mdfardous98/pawmart-client.git
-   ```
