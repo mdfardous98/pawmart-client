@@ -72,7 +72,7 @@ const RecentProducts = () => {
                   </p>
 
                   <Link
-                    to={`/listing-details/${listing._id}`}
+                    to={`/product-details/${listing._id}`}
                     className="inline-block bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors font-medium"
                   >
                     See Details

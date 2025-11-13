@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import ListingCard from "../Components/Shared/LstingCard";
 import Container from "../Components/Container";
 /* eslint-disable no-unused-vars */
+
 import { motion } from "framer-motion";
 
 const CategoryProducts = () => {
@@ -17,19 +18,21 @@ const CategoryProducts = () => {
       .get(
         `https://pawmart-server-olive.vercel.app/listings/category/${categoryName}`
       )
-
       .then((res) => {
+        console.log("Category data:", res.data);
         setData(res.data);
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch((error) => {
+        console.error("Error fetching category data:", error);
+        setLoading(false);
+      });
   }, [categoryName]);
 
   return (
     <div className="min-h-[calc(100vh-300px)] bg-gray-50 dark:bg-gray-900 py-12">
       <title>Category - {categoryName}</title>
       <Container className="px-4">
-        {/* Category  */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +48,6 @@ const CategoryProducts = () => {
           </p>
         </motion.div>
 
-        {/* Loading  */}
         {loading && (
           <div className="flex justify-center items-center py-20">
             <motion.div className="w-12 h-12 border-4 border-pink-500 border-t-transparent rounded-full animate-spin"></motion.div>
@@ -62,6 +64,9 @@ const CategoryProducts = () => {
             >
               No items found in this category
             </motion.h2>
+            <p className="mt-4 text-gray-500">
+              Please check back later or add some listings.
+            </p>
           </div>
         )}
 

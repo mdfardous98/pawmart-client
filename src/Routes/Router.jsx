@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layouts/MainLayout";
 import Home from "../pages/Home";
 import PetsSupply from "../Pages/PetsSupply";
-import Login from "../pages/Login";
+import Login from "../Pages/Login";
 import Register from "../pages/Register";
 import AddListing from "../pages/AddListing";
 import MyListings from "../pages/MyListings";
@@ -10,11 +10,11 @@ import ErrorPage from "../Error/ErrorPage";
 import MyOrders from "../pages/MyOrders";
 import GuestRouter from "./GuestRouter";
 import PrivateRoute from "./PrivateRoute";
-import CategoryProducts from "../Pages/CategoryProducts";
+import CategoryProducts from "../pages/CategoryProducts";
 import axios from "axios";
 import LoadingSpinner from "../Components/LoadingSpinner";
-import ProductDetails from "../Pages/ProductDetails";
-import UpdateListing from "../Pages/UpdateListing";
+import ProductDetails from "../pages/ProductDetails";
+import UpdateListing from "../pages/UpdateListing";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
       },
       {
-        path: "/pets-supply",
+        path: "/pets-supplies",
         element: <PetsSupply></PetsSupply>,
         loader: () =>
           axios.get("https://pawmart-server-olive.vercel.app/listings"),
@@ -80,24 +80,23 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "/login",
-        element: (
-          <GuestRouter>
-            <Login></Login>
-          </GuestRouter>
-        ),
-      },
-      {
-        path: "/register",
-        element: (
-          <GuestRouter>
-            {" "}
-            <Register></Register>
-          </GuestRouter>
-        ),
-      },
     ],
+  },
+  {
+    path: "/login",
+    element: (
+      <GuestRouter>
+        <Login></Login>
+      </GuestRouter>
+    ),
+  },
+  {
+    path: "/register",
+    element: (
+      <GuestRouter>
+        <Register></Register>
+      </GuestRouter>
+    ),
   },
 ]);
 

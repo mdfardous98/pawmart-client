@@ -1,5 +1,6 @@
 import React from "react";
 /* eslint-disable no-unused-vars */
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
@@ -14,8 +15,9 @@ const categories = [
       <FaPaw className="text-5xl text-pink-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-pink-100 to-pink-200 dark:from-pink-900/40 dark:to-pink-800/30",
-    path: "/category-filtered-product/Pets",
-    image: "https://images.unsplash.com/photo-1568572933382-74d440642117?w=600",
+    path: "/category-filtered-product/Pets", 
+    image:
+      "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&h=400&fit=crop",
   },
   {
     name: "Pet Food",
@@ -25,8 +27,9 @@ const categories = [
       <FaBone className="text-5xl text-yellow-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-yellow-100 to-yellow-200 dark:from-yellow-900/40 dark:to-yellow-800/30",
-    path: "/category-filtered-product/Pet Food",
-    image: "https://images.unsplash.com/photo-1568572933382-74d440642117?w=600",
+    path: "/category-filtered-product/Pet%20Food", 
+    image:
+      "https://images.unsplash.com/photo-1589923188901-cc6c3e3da322?w=600&h=400&fit=crop",
   },
   {
     name: "Accessories",
@@ -36,8 +39,9 @@ const categories = [
       <FaTag className="text-5xl text-indigo-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-indigo-100 to-indigo-200 dark:from-indigo-900/40 dark:to-indigo-800/30",
-    path: "/category-filtered-product/Accessories",
-    image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600",
+    path: "/category-filtered-product/Accessories", 
+    image:
+      "https://images.unsplash.com/photo-1559135047-66fcb9195e41?w=600&h=400&fit=crop",
   },
   {
     name: "Pet Care",
@@ -46,8 +50,9 @@ const categories = [
       <FaFirstAid className="text-5xl text-green-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/30",
-    path: "/category-filtered-product/Pet Care Products",
-    image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600",
+    path: "/category-filtered-product/Pet%20Care%20Products", 
+    image:
+      "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=600&h=400&fit=crop",
   },
 ];
 
@@ -62,7 +67,7 @@ const Category = () => {
             transition={{ duration: 0.7 }}
             className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-3"
           >
-            <Typewriter words={["Explore by Category 🐾"]} />
+            <Typewriter words={["Explore by Category"]} loop={1} />
           </motion.h2>
           <p className="text-gray-500 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Find everything your pet needs — from nutritious food to cozy beds

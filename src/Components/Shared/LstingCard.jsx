@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 /* eslint-disable no-unused-vars */
+
 import { motion } from "framer-motion";
+import { BiCategory } from "react-icons/bi"; 
+import { FaShoppingCart, FaPaw, FaTag } from "react-icons/fa";
+import { IoLocationOutline } from "react-icons/io5";
 
 const ListingCard = ({ listing }) => {
   const { _id, name, category, Price, location, image } = listing;
 
   const displayPrice =
-    category === "Pets" || Price === 0 ? "Free for Adoption" : `৳${Price}`;
+    category === "Pets" || Price == 0 ? "Free for Adoption" : `$${Price}`;
 
   return (
     <motion.div
@@ -33,8 +37,8 @@ const ListingCard = ({ listing }) => {
         </h2>
 
         <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base mb-4 leading-relaxed">
-          Discover this amazing {category || "pet"} from our community. Adopt or
-          purchase high-quality products tailored for your beloved companion.
+          Discover this amazing {category || "pet"} from our community. Adoption
+          or purchase high-quality products tailored for your beloved companion.
         </p>
 
         <div className="space-y-2">
