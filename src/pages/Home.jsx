@@ -4,6 +4,12 @@ import Container from "../Components/Container";
 import Category from "../Components/Home/Categories";
 import RecentProducts from "../Components/Home/RecentProducts";
 import ExtraSections from "../Components/Home/ExtraSections";
+import Statistics from "../Components/Home/Statistics";
+import Features from "../Components/Home/Features";
+import Testimonials from "../Components/Home/Testimonials";
+import Newsletter from "../Components/Home/Newsletter";
+import FAQ from "../Components/Home/FAQ";
+import CallToAction from "../Components/Home/CallToAction";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 
@@ -19,7 +25,7 @@ const Home = () => {
     <>
       <title>PawMart - Home</title>
       <Container className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-        {/* Banner */}
+        {/* 1. Banner */}
         <header className="py-6 md:py-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -30,7 +36,15 @@ const Home = () => {
           </motion.div>
         </header>
 
-        {/* Category */}
+        {/* 2. Statistics */}
+        <motion.section
+          {...motionProps}
+          className="py-12 bg-white dark:bg-gray-800 rounded-3xl shadow-lg my-10"
+        >
+          <Statistics />
+        </motion.section>
+
+        {/* 3. Category */}
         <motion.section
           {...motionProps}
           className="py-12 bg-white dark:bg-gray-800 rounded-3xl shadow-lg my-10"
@@ -38,20 +52,60 @@ const Home = () => {
           <Category />
         </motion.section>
 
-        {/* Recent Products */}
+        {/* 4. Features */}
         <motion.section
           {...motionProps}
-          className="py-12 my-10 bg-gradient-to-tr from-pink-50 to-yellow-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl"
+          className="py-12 my-10 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl"
+        >
+          <Features />
+        </motion.section>
+
+        {/* 5. Recent Products */}
+        <motion.section
+          {...motionProps}
+          className="py-12 my-10 bg-gradient-to-r from-pink-50 to-yellow-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl"
         >
           <RecentProducts />
         </motion.section>
 
-        {/* Extra Sections */}
+        {/* 6. Testimonials */}
+        <motion.section
+          {...motionProps}
+          className="py-12 my-10 bg-white dark:bg-gray-800 rounded-3xl shadow-lg"
+        >
+          <Testimonials />
+        </motion.section>
+
+        {/* 7. Extra Sections (Pet Heroes) */}
         <motion.section
           {...motionProps}
           className="py-12 my-10 bg-white dark:bg-gray-800 rounded-3xl shadow-lg"
         >
           <ExtraSections />
+        </motion.section>
+
+        {/* 8. FAQ */}
+        <motion.section
+          {...motionProps}
+          className="py-12 my-10 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl"
+        >
+          <FAQ />
+        </motion.section>
+
+        {/* 9. Newsletter */}
+        <motion.section
+          {...motionProps}
+          className="py-12 my-10 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl"
+        >
+          <Newsletter />
+        </motion.section>
+
+        {/* 10. Call to Action */}
+        <motion.section
+          {...motionProps}
+          className="py-12 my-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl shadow-xl"
+        >
+          <CallToAction />
         </motion.section>
       </Container>
     </>

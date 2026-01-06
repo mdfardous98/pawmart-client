@@ -1,11 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FiMenu, FiX, FiUser, FiLogOut, FiSun, FiMoon } from "react-icons/fi";
+import {
+  FiMenu,
+  FiX,
+  FiUser,
+  FiLogOut,
+  FiSun,
+  FiMoon,
+  FiSettings,
+  FiShield,
+} from "react-icons/fi";
 import { AuthContext } from "../../Context/AuthContext";
 import logo from "../../assets/LOGO.png";
 
 const Navbar = () => {
-  const { currentUser, logOutUser } = useContext(AuthContext);
+  const { currentUser, logOutUser, userRole, isAdmin, isSeller } =
+    useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
@@ -41,25 +51,33 @@ const Navbar = () => {
       >
         Pets & Supplies
       </NavLink>
+      <NavLink
+        to="/about"
+        className="block md:inline-block px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium"
+      >
+        About
+      </NavLink>
+      <NavLink
+        to="/contact"
+        className="block md:inline-block px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium"
+      >
+        Contact
+      </NavLink>
       {currentUser && (
         <>
-          <NavLink
-            to="/add-listing"
-            className="block md:inline-block px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium"
-          >
-            Add Listing
-          </NavLink>
-          <NavLink
-            to="/my-listings"
-            className="block md:inline-block px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium"
-          >
-            My Listings
-          </NavLink>
+          {isSeller() && (
+            <NavLink
+              to="/add-listing"
+              className="block md:inline-block px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium"
+            >
+              Add Listing
+            </NavLink>
+          )}
           <NavLink
             to="/my-orders"
             className="block md:inline-block px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium"
           >
-            My Orders List
+            My Orders
           </NavLink>
         </>
       )}
@@ -111,19 +129,76 @@ const Navbar = () => {
                   </div>
                 )}
 
-                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
-                  <p className="text-center font-semibold py-2">
-                    {currentUser.displayName || "User"}
-                  </p>
-                  <p className="text-center text-sm text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700 pb-2">
-                    {currentUser.email}
-                  </p>
-                  <button
-                    onClick={handleLogout}
-                    className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                  >
-                    Logout
-                  </button>
+                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
+                  <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+                    <p className="font-semibold text-gray-900 dark:text-white">
+                      {currentUser.displayName || "User"}
+                    </p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      {currentUser.email}
+                    </p>
+                    {userRole && (
+                      <span
+                        className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full mt-2 ${
+                          userRole === "admin"
+                            ? "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
+                            : userRole === "seller"
+                            ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                            : "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+                        }`}
+                      >
+                        {userRole}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="py-2">
+                    <Link
+                      to="/dashboard"
+                      className="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >
+                      <FiSettings className="w-4 h-4 mr-3" />
+                      Dashboard
+                    </Link>
+
+                    {isSeller() && (
+                      <Link
+                        to="/dashboard/my-listings"
+                        className="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                      >
+                        <FiUser className="w-4 h-4 mr-3" />
+                        My Listings
+                      </Link>
+                    )}
+
+                    {isAdmin() && (
+                      <Link
+                        to="/dashboard/admin/users"
+                        className="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                      >
+                        <FiShield className="w-4 h-4 mr-3" />
+                        Admin Panel
+                      </Link>
+                    )}
+
+                    <Link
+                      to="/dashboard/profile"
+                      className="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >
+                      <FiUser className="w-4 h-4 mr-3" />
+                      Profile
+                    </Link>
+                  </div>
+
+                  <div className="border-t border-gray-200 dark:border-gray-700 py-2">
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center w-full px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900 transition-colors"
+                    >
+                      <FiLogOut className="w-4 h-4 mr-3" />
+                      Logout
+                    </button>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -161,7 +236,25 @@ const Navbar = () => {
 
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transition-colors">
-          <div className="px-4 pt-2 pb-4 space-y-2">{links}</div>
+          <div className="px-4 pt-2 pb-4 space-y-2">
+            {links}
+            {!currentUser && (
+              <div className="pt-2 space-y-2">
+                <Link
+                  to="/login"
+                  className="block px-2 py-1 rounded bg-primary-500 hover:bg-primary-600 text-white text-center transition-colors"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/register"
+                  className="block px-2 py-1 rounded bg-secondary-500 hover:bg-secondary-600 text-white text-center transition-colors"
+                >
+                  Register
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </nav>

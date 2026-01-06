@@ -12,34 +12,34 @@ export default function Banner() {
   const banners = [
     {
       image:
-        "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1200&h=600&fit=crop",
-      title: "Adopt Love, Not Just a Pet 🐾",
+        "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1200&h=600&fit=crop",
+      title: "Find Your Perfect Companion 🐾",
       description:
-        "Find adorable companions waiting for a warm home. Bring happiness and love to your life with adoption.",
+        "Discover loving pets waiting for their forever homes in Bangladesh. Start your adoption journey with PawMart today.",
       color: "from-pink-500/40 to-yellow-500/40",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1552053831-71594a27632d?w=1200&h=600&fit=crop",
-      title: "Give a Second Chance ❤️",
+        "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1200&h=600&fit=crop",
+      title: "Premium Pet Care Products ❤️",
       description:
-        "Every pet deserves a caring home. Choose adoption and be the reason behind a wagging tail today.",
+        "Shop authentic pet food, toys, and accessories from trusted brands. Quality products delivered across Bangladesh.",
       color: "from-orange-500/40 to-purple-500/40",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=1200&h=600&fit=crop",
-      title: "Love, Care & Companionship 🐶",
+        "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1200&h=600&fit=crop",
+      title: "Expert Pet Care Guidance 🐶",
       description:
-        "Find healthy food, fun toys, and trusted care items — everything your furry friend deserves.",
+        "Get professional advice from veterinarians and pet care experts. 24/7 support for all your pet care needs.",
       color: "from-blue-500/40 to-teal-500/40",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=1200&h=600&fit=crop",
-      title: "Because Family Has Paws 🐕",
+        "https://images.unsplash.com/photo-1415369629372-26f2fe60c467?w=1200&h=600&fit=crop",
+      title: "Join Bangladesh's Pet Community 🐕",
       description:
-        "Your next best friend is waiting. Adopt today and make memories that last a lifetime.",
+        "Connect with fellow pet lovers, share experiences, and build lasting friendships in our growing community.",
       color: "from-green-500/40 to-indigo-500/40",
     },
   ];

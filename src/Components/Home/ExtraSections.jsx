@@ -7,35 +7,35 @@ import { FiHeart, FiUsers } from "react-icons/fi";
 const petHeroes = [
   {
     name: "Rafiqul Hasan",
-    title: "Adopted Two Street Dogs",
+    title: "Rescued Two Street Dogs in Dhaka",
     story:
-      "I rescued Roxy and Bruno from the streets of Dhaka. They’ve become my daily source of happiness. Every pet deserves love, not loneliness.",
+      "I found Roxy and Bruno injured on the streets of Old Dhaka. After nursing them back to health, they became my family. Now they're healthy, happy, and bring joy to everyone they meet.",
     image:
-      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
   },
   {
     name: "Priya Islam",
-    title: "Volunteer at Pet Rescue Bangladesh",
+    title: "Volunteer at Dhaka Animal Rescue",
     story:
-      "Helping abandoned animals find homes gives me a purpose. Seeing them recover and trust again is an emotional journey I’m proud of.",
+      "Working with abandoned animals in Bangladesh has taught me about resilience and love. Every rescue story reminds me why this work matters - giving voiceless animals a second chance at happiness.",
     image:
-      "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?w=400&h=400&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
   },
   {
-    name: "Md Fardous",
-    title: "First-Time Cat Adopter",
+    name: "Md. Fardous Rahman",
+    title: "First-Time Cat Adopter in Chittagong",
     story:
-      "I was unsure about adopting at first, but now my cat, Luna, follows me everywhere. PawMart made the process simple and safe.",
+      "I was hesitant about pet adoption, but PawMart made it simple and safe. My cat Luna has transformed my apartment into a home. She follows me everywhere and has become my best companion.",
     image:
-      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
   },
   {
-    name: "Sneha Das",
-    title: "Runs a Pet Shelter Dhaka",
+    name: "Dr. Sneha Das",
+    title: "Veterinarian & Shelter Founder",
     story:
-      "We started with just three rescued dogs. Today, we’ve rehomed over 120 animals. Adoption transforms both pets and people.",
+      "We started Paws & Hearts Shelter with just three rescued dogs in Sylhet. Today, we've successfully rehomed over 200 animals across Bangladesh. Every adoption creates a ripple of love.",
     image:
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
   },
 ];
 
@@ -56,9 +56,10 @@ const ExtraSections = () => {
               <Typewriter words={["Why Adopt from PawMart? ❤️"]} />
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-              Adoption gives a homeless pet a second chance. In Bangladesh and
-              India, thousands of animals are waiting for love. Join our
-              community to make a difference.
+              Adoption gives a homeless pet a second chance at life. In
+              Bangladesh, thousands of loving animals are waiting for their
+              forever homes. Join our community of pet lovers and make a
+              difference in an animal's life today.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -90,8 +91,8 @@ const ExtraSections = () => {
             <Typewriter words={["Meet Our Pet Heroes 🐾"]} />
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Inspiring stories from adopters who changed lives and found lifelong
-            friends.
+            Inspiring stories from adopters across Bangladesh who changed lives
+            and found lifelong companions through PawMart.
           </p>
         </motion.div>
 
@@ -123,7 +124,7 @@ const ExtraSections = () => {
               <div className="relative px-3">
                 <FiUsers className="absolute -top-3 left-2 text-pink-300 dark:text-pink-500 text-sm" />
                 <p className="text-gray-600 dark:text-gray-300 text-sm italic leading-relaxed">
-                  “{hero.story}”
+                  "{hero.story}"
                 </p>
               </div>
             </motion.div>

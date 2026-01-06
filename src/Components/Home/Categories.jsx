@@ -10,19 +10,19 @@ const categories = [
   {
     name: "Adopt a Pet",
     description:
-      "Give a loving home to adorable cats and dogs waiting for you.",
+      "Find your perfect companion from rescued cats and dogs across Bangladesh. Every adoption saves a life.",
     icon: (
       <FaPaw className="text-5xl text-pink-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-pink-100 to-pink-200 dark:from-pink-900/40 dark:to-pink-800/30",
     path: "/category-filtered-product/Pets", 
     image:
-      "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop",
   },
   {
-    name: "Pet Food",
+    name: "Premium Pet Food",
     description:
-      "Healthy meals crafted to keep tails wagging and hearts happy.",
+      "Nutritious meals from trusted brands to keep your pets healthy and happy. Delivered fresh across Bangladesh.",
     icon: (
       <FaBone className="text-5xl text-yellow-500 group-hover:scale-110 transition-transform" />
     ),
@@ -32,23 +32,29 @@ const categories = [
       "https://images.unsplash.com/photo-1589923188901-cc6c3e3da322?w=600&h=400&fit=crop",
   },
   {
-    name: "Accessories",
+    name: "Pet Accessories",
     description:
-      "Trendy toys, comfy beds, and stylish collars your pets will love.",
+      "Stylish collars, comfortable beds, interactive toys, and everything your pet needs for a happy life.",
     icon: (
       <FaTag className="text-5xl text-indigo-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-indigo-100 to-indigo-200 dark:from-indigo-900/40 dark:to-indigo-800/30",
     path: "/category-filtered-product/Accessories", 
     image:
-      "https://images.unsplash.com/photo-1559135047-66fcb9195e41?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=400&fit=crop",
   },
   {
-    name: "Pet Care",
-    description: "Shampoos, brushes, and wellness essentials for happy pets.",
+    name: "Pet Healthcare",
+    description: "Professional grooming supplies, vitamins, and wellness products to keep your pets in perfect health.",
     icon: (
       <FaFirstAid className="text-5xl text-green-500 group-hover:scale-110 transition-transform" />
     ),
+    bg: "bg-gradient-to-tr from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/30",
+    path: "/category-filtered-product/Pet%20Care", 
+    image:
+      "https://images.unsplash.com/photo-1559135047-66fcb9195e41?w=600&h=400&fit=crop",
+  },
+];
     bg: "bg-gradient-to-tr from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/30",
     path: "/category-filtered-product/Pet%20Care%20Products", 
     image:
