@@ -1,4 +1,4 @@
-import axios from "axios";
+import { api } from "../api/axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ListingCard from "../Components/Shared/LstingCard";
@@ -14,10 +14,8 @@ const CategoryProducts = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(
-        `https://pawmart-server-olive.vercel.app/listings/category/${categoryName}`
-      )
+    api
+      .get(`/listings/category/${categoryName}`)
       .then((res) => {
         console.log("Category data:", res.data);
         setData(res.data);

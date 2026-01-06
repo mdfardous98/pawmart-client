@@ -15,7 +15,7 @@ const categories = [
       <FaPaw className="text-5xl text-pink-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-pink-100 to-pink-200 dark:from-pink-900/40 dark:to-pink-800/30",
-    path: "/category-filtered-product/Pets", 
+    path: "/category-filtered-product/Pets",
     image:
       "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop",
   },
@@ -27,7 +27,7 @@ const categories = [
       <FaBone className="text-5xl text-yellow-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-yellow-100 to-yellow-200 dark:from-yellow-900/40 dark:to-yellow-800/30",
-    path: "/category-filtered-product/Pet%20Food", 
+    path: "/category-filtered-product/Pet%20Food",
     image:
       "https://images.unsplash.com/photo-1589923188901-cc6c3e3da322?w=600&h=400&fit=crop",
   },
@@ -39,26 +39,21 @@ const categories = [
       <FaTag className="text-5xl text-indigo-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-indigo-100 to-indigo-200 dark:from-indigo-900/40 dark:to-indigo-800/30",
-    path: "/category-filtered-product/Accessories", 
+    path: "/category-filtered-product/Accessories",
     image:
       "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=400&fit=crop",
   },
   {
     name: "Pet Healthcare",
-    description: "Professional grooming supplies, vitamins, and wellness products to keep your pets in perfect health.",
+    description:
+      "Professional grooming supplies, vitamins, and wellness products to keep your pets in perfect health.",
     icon: (
       <FaFirstAid className="text-5xl text-green-500 group-hover:scale-110 transition-transform" />
     ),
     bg: "bg-gradient-to-tr from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/30",
-    path: "/category-filtered-product/Pet%20Care", 
+    path: "/category-filtered-product/Pet%20Care",
     image:
       "https://images.unsplash.com/photo-1559135047-66fcb9195e41?w=600&h=400&fit=crop",
-  },
-];
-    bg: "bg-gradient-to-tr from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/30",
-    path: "/category-filtered-product/Pet%20Care%20Products", 
-    image:
-      "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=600&h=400&fit=crop",
   },
 ];
 

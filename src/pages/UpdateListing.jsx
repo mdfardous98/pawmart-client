@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { Typewriter } from "react-simple-typewriter";
 import { useLocation, useParams } from "react-router";
-import axios from "axios";
+import { api } from "../api/axios";
 import toast from "react-hot-toast";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
@@ -41,11 +41,8 @@ const UpdateListing = () => {
       email: form.email.value,
     };
 
-    axios
-      .put(
-        `https://pawmart-server-olive.vercel.app/listings/${id}`,
-        updateListingData
-      )
+    api
+      .put(`/listings/${id}`, updateListingData)
       .then(() => toast.success("Listing updated successfully"))
       .catch(() => toast.error("Failed to update listing"));
   };

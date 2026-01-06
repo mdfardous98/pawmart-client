@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import axios from "axios";
+import { api } from "../api/axios";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Context/AuthContext";
 import { Typewriter } from "react-simple-typewriter";
@@ -28,8 +28,8 @@ const AddListing = () => {
       addedAt: new Date(),
     };
 
-    axios
-      .post("https://pawmart-server-olive.vercel.app/listings", newListing)
+    api
+      .post("/listings", newListing)
       .then((res) => {
         toast.success("Listing added successfully!");
         form.reset();

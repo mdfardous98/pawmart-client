@@ -17,12 +17,13 @@ const MyOrders = () => {
   useEffect(() => {
     if (!currentUser?.email) return;
 
-    axios
-      .get(
-        `https://pawmart-server-olive.vercel.app/orders/${currentUser?.email}`
-      )
+    api
+      .get(`/orders/${currentUser?.email}`)
       .then((res) => setOrderData(res.data))
-      .catch(() => toast.error("Failed to fetch orders"))
+      .catch((error) => {
+        console.error("Error fetching orders:", error);
+        toast.error("Failed to fetch orders");
+      })
       .finally(() => setLoading(false));
   }, [currentUser?.email]);
 

@@ -5,7 +5,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import { useParams } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
-import axios from "axios";
+import { api } from "../api/axios";
 import toast from "react-hot-toast";
 import LoadingSpinner from "../Components/LoadingSpinner";
 
@@ -18,8 +18,8 @@ const ProductDetails = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(`https://pawmart-server-olive.vercel.app/listings/${id}`)
+    api
+      .get(`/listings/${id}`)
       .then((res) => setPageDetails(res.data))
       .catch(() => toast.error("Failed to fetch product details"))
       .finally(() => setLoading(false));
@@ -52,8 +52,8 @@ const ProductDetails = () => {
       additionalNotes: form.notes.value,
     };
 
-    axios
-      .post("https://pawmart-server-olive.vercel.app/orders", orderData)
+    api
+      .post("/orders", orderData)
       .then((res) => {
         if (res.data.insertedId) {
           toast.success("Order submitted successfully!");

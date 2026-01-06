@@ -7,7 +7,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import axios from "axios";
+import { api } from "../api/axios";
 import toast from "react-hot-toast";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import { PulseLoader } from "react-spinners";
@@ -30,9 +30,7 @@ const PetsSupply = () => {
     if (!searchText) return setLoading(false);
 
     try {
-      const response = await axios.get(
-        `https://pawmart-server-olive.vercel.app/search?search=${searchText}`
-      );
+      const response = await api.get(`/search?search=${searchText}`);
 
       setSearchData(response.data);
     } catch (error) {

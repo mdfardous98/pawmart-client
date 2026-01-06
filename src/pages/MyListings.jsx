@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaEdit, FaTrash, FaBoxOpen } from "react-icons/fa";
 import { AuthContext } from "../Context/AuthContext";
-import axios from "axios";
+import { api } from "../api/axios";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import Container from "../Components/Container";
 import Swal from "sweetalert2";
@@ -17,10 +17,8 @@ const MyListings = () => {
   useEffect(() => {
     if (!currentUser?.email) return;
 
-    axios
-      .get(
-        `https://pawmart-server-olive.vercel.app/listings/user/${currentUser?.email}`
-      )
+    api
+      .get(`/listings/user/${currentUser?.email}`)
       .then((res) => setListingsData(res.data))
       .catch(() => toast.error("Failed to fetch listings"))
       .finally(() => setLoading(false));
@@ -39,19 +37,19 @@ const MyListings = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-       axios
-         .delete(`https://pawmart-server-olive.vercel.app/listings/${id}`)
-         .then(() => {
-           setListingsData(listingsData.filter((item) => item._id !== id));
-           Swal.fire({
-             title: "Deleted!",
-             text: "Your listing has been deleted.",
-             icon: "success",
-             timer: 2000,
-             showConfirmButton: false,
-           });
-         })
-         .catch(() => toast.error("Failed to delete listing"));
+        api
+          .delete(`/listings/${id}`)
+          .then(() => {
+            setListingsData(listingsData.filter((item) => item._id !== id));
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your listing has been deleted.",
+              icon: "success",
+              timer: 2000,
+              showConfirmButton: false,
+            });
+          })
+          .catch(() => toast.error("Failed to delete listing"));
       }
     });
   };
